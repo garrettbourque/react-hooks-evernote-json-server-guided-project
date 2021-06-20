@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 
-function NoteViewer() {
+function NoteViewer({notes}) {
+  console.log("noteViewer")
   return (
     <>
-      <h2>Title</h2>
-      <p>Body</p>
+      <h2>{notes.title}</h2>
+      <p>{notes.body}</p>
       <button>Edit</button>
     </>
   );

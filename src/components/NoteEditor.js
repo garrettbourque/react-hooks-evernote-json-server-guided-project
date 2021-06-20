@@ -1,6 +1,7 @@
 import React from "react";
 
 function NoteEditor() {
+  //console.log("noteeditor")
   return (
     <form className="note-editor">
       <input type="text" name="title" />

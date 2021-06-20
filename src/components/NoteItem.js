@@ -1,10 +1,15 @@
 import React from "react";
 
-function NoteItem() {
+function NoteItem({ notes,setNote }) {
+  //console.log(note)
+  const selectNote=()=>{
+  setNote(notes)
+  }
+
   return (
-    <li>
-      <h2>Title</h2>
-      <p>Caption...</p>
+    <li onClick={selectNote}>
+      <h2>{notes.title}</h2>
+      <p>{notes.body.substring(0,12)+"..."}</p>
     </li>
   );
 }

@@ -1,11 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 import NoteItem from "./NoteItem";
 
-function NoteList() {
+function NoteList({ notes,setNote }) {
+ // console.log(notes)
   return (
     <ul>
-      {/* Render list of notes here... */}
-      <NoteItem />
+      {notes.map(notes => <NoteItem notes={notes} setNote={setNote}/>
+        )
+      }      
     </ul>
   );
 }
