@@ -1,11 +1,11 @@
 import React,{useState} from "react";
 import NoteItem from "./NoteItem";
 
-function NoteList({ notes,setNote }) {
- // console.log(notes)
+function NoteList({ notes,setNote, foundNote }) {
+  console.log(foundNote)
   return (
     <ul>
-      {notes.map(notes => <NoteItem notes={notes} setNote={setNote}/>
+      {foundNote.map(notes => <NoteItem notes={notes} setNote={setNote}/>
         )
       }      
     </ul>

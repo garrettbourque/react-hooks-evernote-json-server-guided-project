@@ -6,7 +6,8 @@ import Content from "./Content";
 function NoteContainer() {
   const[notes, setNotes] = useState([])
   const[note,setNote] = useState([])
-  
+  const[fNote, setFNote] = useState("")
+
   useEffect(()=>{
     fetch("http://localhost:3000/notes")
     .then(resp => resp.json())
@@ -14,11 +15,16 @@ function NoteContainer() {
   },[])
 
 //console.log(notes)
+  const foundNote = notes.filter((fnote)=>
+    fnote.title.toLowerCase().includes(fNote.toLowerCase())
+    )
+    
+
   return (
     <>
-      <Search />
+      <Search fNote={fNote} setFNote={setFNote}/>
       <div className="container">
-        <Sidebar notes ={notes} setNote={setNote}/>
+        <Sidebar notes ={notes} setNote={setNote} foundNote={foundNote}/>
         <Content notes ={note}/>
       </div>
     </>
