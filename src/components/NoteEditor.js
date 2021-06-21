@@ -37,7 +37,7 @@ function NoteEditor({notes, input, setInput,editMode,inputT,setInputT,}) {
   //console.log(input)
   return (
     <form className="note-editor">
-      <input type="text" name="title" value={inputT} onChangeT={onChangeT} />
+      <input type="text" name="title" value={inputT} onChange={onChangeT} />
       <textarea name="body" value={input}  onChange={onChange}/>
       <div className="button-row">
         <input className="button" type="submit" value="Save" onClick={saveChange()}/>
