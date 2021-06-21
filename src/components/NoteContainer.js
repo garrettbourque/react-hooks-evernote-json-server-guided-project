@@ -45,7 +45,7 @@ function NoteContainer() {
       <Search fNote={fNote} setFNote={setFNote}/>
       <div className="container">
         <Sidebar notes ={notes} setNote={setNote} foundNote={foundNote} newNote={newNote}/>
-        <Content notes ={note}/>
+        <Content notes ={note} setNotes={setNote}/>
       </div>
     </>
   );
