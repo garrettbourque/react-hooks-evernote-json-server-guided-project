@@ -11,12 +11,23 @@ import Instructions from "./Instructions";
           refactor to get this Content component to work.
 */
 function Content({notes}) {
+  const[viewer, setViewer]=useState(false);
+  const [input, setInput] = useState("");
+  const [inputT, setInputT] = useState("");
+
+  const editMode=()=>{
+    console.log("edit mode")
+    setViewer(!viewer)
+    setInput(notes.body)
+    setInputT(notes.title)
+
+    }
   //console.log(notes)
   const getContent = () => {
-    if (!notes) {
-      return <NoteEditor notes ={notes}/>;
-    } else if (notes) {
-      return <NoteViewer notes ={notes}/>;
+    if (viewer) {
+      return <NoteEditor notes ={notes}  input={input}  setInput={setInput} editMode={editMode} inputT={inputT} setInputT={setInputT}/>;
+    } else if (!viewer) {
+      return <NoteViewer notes ={notes} editMode={editMode}/>;
     } else {
       return <Instructions />;
     }
